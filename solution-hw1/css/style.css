@@ -1,6 +1,8 @@
 /* CSS Stylesheet for Homework 1 */
 /* Sources: 
 https://www.w3.org/Style/Examples/007/center.en.html
+https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors
+https://blog.logrocket.com/creating-custom-select-dropdown-css/
 */
 
 .page-header {
@@ -71,6 +73,10 @@ https://www.w3.org/Style/Examples/007/center.en.html
   margin: 5px;
 }
 
+.product-card:hover{
+  background-color: rgb(245, 245, 110);
+}
+
 .product-image {
   width: 400px;
   height: 400px;
@@ -83,14 +89,14 @@ https://www.w3.org/Style/Examples/007/center.en.html
 }
 
 .product-gallery-product-name {
-  font-size: 18px;
+  font-size: 22px;
   color: black;
   text-decoration: underline;
   text-align: left;
 }
 
 .product-gallery-price {
-  font-size: 18px;
+  font-size: 22px;
   color: black;
   text-align: left;
 }
@@ -115,14 +121,21 @@ https://www.w3.org/Style/Examples/007/center.en.html
   text-align: center;
 }
 
-.product-detail-glazing, .product-detail-packsize {
-  font-size: 23px;
+.product-detail-card label {
+  font-size: 25px;
   color: black;
   text-align: center;
+  margin: 15px;
 }
 
-.product-scroll {
-
+.product-detail-card select {
+  font-size: 15px;
+  color: black;
+  text-align: center;
+  background-color: white;
+  padding: 5px;
+  border-radius: 0px;
+  width: 200px;
 }
 
 .product-add-to-cart-card {
@@ -130,6 +143,7 @@ https://www.w3.org/Style/Examples/007/center.en.html
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 30px;
 }
 
 .product-detail-price, .add-to-cart-button  {
