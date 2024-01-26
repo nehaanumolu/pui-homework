@@ -4,7 +4,7 @@ https://www.w3.org/Style/Examples/007/center.en.html
 */
 
 .page-header {
-  border-bottom: 4px solid black;
+  border-bottom: 2px solid black;
 }
 
 .bunbun-logo {
@@ -16,6 +16,7 @@ https://www.w3.org/Style/Examples/007/center.en.html
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 10px;
 }
 
 .products-title-highlighted, .cart-title-regular {
@@ -23,19 +24,19 @@ https://www.w3.org/Style/Examples/007/center.en.html
 }
 
 .products-title-highlighted {
-  font-size: 20px;
+  font-size: 32px;
   font-weight: bold;
   background-color: yellow;
   color: black;
 }
 
 .cart-title-regular {
-  font-size: 20px;
+  font-size: 32px;
   color: black;
 }
 
 .products-title-regular {
-  font-size: 20px;
+  font-size: 32px;
   color: black;
 }
 
@@ -44,32 +45,54 @@ https://www.w3.org/Style/Examples/007/center.en.html
 }
 
 .cart-title-highlighted {
-  font-size: 20px;
+  font-size: 32px;
   font-weight: bold;
   background-color: yellow;
   color: black;
 }
 
 .page-description {
-  font-size: 18px;
+  font-size: 30px;
   color: black;
   text-align: center;
   padding: 20px;
 }
 
 .product-image-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: scroll;
+}
 
+.product-card{
+  padding: 5px;
+  margin: 5px;
 }
 
 .product-image {
   width: 400px;
   height: 400px;
-  border: 2px solid black;
-  padding: 10px;
+  border: 3px solid black;
+  align-items: center;
+}
+
+.product-gallery-product-name, .product-gallery-price {
+  margin: 15px;
 }
 
 .product-gallery-product-name {
+  font-size: 18px;
   color: black;
+  text-decoration: underline;
+  text-align: left;
+}
+
+.product-gallery-price {
+  font-size: 18px;
+  color: black;
+  text-align: left;
 }
 
 .product-image-shopping-cart {
@@ -78,3 +101,53 @@ https://www.w3.org/Style/Examples/007/center.en.html
   border: 2px solid black;
 }
 
+.product-detail-card {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-detail-description {
+  font-size: 23px;
+  color: black;
+  text-align: center;
+}
+
+.product-detail-glazing, .product-detail-packsize {
+  font-size: 23px;
+  color: black;
+  text-align: center;
+}
+
+.product-scroll {
+
+}
+
+.product-add-to-cart-card {
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-detail-price, .add-to-cart-button  {
+  display: inline-block;
+  font-size: 10px;
+  color: black;
+  font-weight: bold;
+  vertical-align: middle;
+  margin: 5px;
+}
+
+.add-to-cart-button {
+  width: auto;
+  border: 2px solid black;
+  padding: 7px;
+  height: auto;
+  font-size: 10px;
+  background-color: yellow;
+  text-align: center;
+  cursor: pointer;
+}
