@@ -1,9 +1,13 @@
 /* CSS Stylesheet for Homework 1 */
-/* Sources: 
+
+/* Sources Used: 
 https://www.w3.org/Style/Examples/007/center.en.html
 https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors
 https://blog.logrocket.com/creating-custom-select-dropdown-css/
 */
+
+
+/* ----- General Rules applicable to every page ------ */
 
 .page-header {
   border-bottom: 4px solid black;
@@ -20,6 +24,13 @@ https://blog.logrocket.com/creating-custom-select-dropdown-css/
   justify-content: center;
   padding: 10px;
 }
+
+/* --- Disable underline feature of any navigation links ---- */ 
+a {
+  text-decoration: none;
+}
+
+/* Words Products and Cart in Top Menu Bar, Highlighted & Regular based on page*/
 
 .products-title-highlighted, .cart-title-regular {
   margin: 5px;
@@ -53,6 +64,8 @@ https://blog.logrocket.com/creating-custom-select-dropdown-css/
   color: black;
 }
 
+/* Page description at top of each page */ 
+
 .page-description {
   font-size: 30px;
   color: black;
@@ -60,7 +73,10 @@ https://blog.logrocket.com/creating-custom-select-dropdown-css/
   padding: 20px;
 }
 
-.product-image-section {
+/* -------- Product Gallery Rules -------- */
+
+/* Entire scrollable product gallery section */ 
+.product-gallery-section {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -68,11 +84,13 @@ https://blog.logrocket.com/creating-custom-select-dropdown-css/
   overflow: scroll;
 }
 
+/* Contains product image, name and price */
 .product-card{
   padding: 5px;
   margin: 5px;
 }
 
+/* Product card gets highlighted when user hovers over it */
 .product-card:hover{
   background-color: rgb(245, 245, 110);
 }
@@ -88,9 +106,11 @@ https://blog.logrocket.com/creating-custom-select-dropdown-css/
   margin: 15px;
 }
 
+/* Bold product name when hovering over product card */ 
 .product-card:hover .product-gallery-product-name {
   font-weight: bold;
 }
+
 .product-gallery-product-name {
   font-size: 22px;
   color: black;
@@ -103,6 +123,8 @@ https://blog.logrocket.com/creating-custom-select-dropdown-css/
   color: black;
   text-align: left;
 }
+
+/* ------- Product Detail Page Rules ------- */ 
 
 .product-detail-card {
   margin: 10px;
@@ -125,6 +147,7 @@ https://blog.logrocket.com/creating-custom-select-dropdown-css/
   margin: 15px;
 }
 
+/* Drop down menu styling */ 
 .product-detail-card select {
   font-size: 15px;
   color: black;
@@ -161,6 +184,9 @@ https://blog.logrocket.com/creating-custom-select-dropdown-css/
   text-align: center;
   cursor: pointer;
 }
+
+
+/* ------ Product Cart Page Rules ----- */
 
 .product-cart-section {
   padding: 20px;
@@ -213,8 +239,4 @@ https://blog.logrocket.com/creating-custom-select-dropdown-css/
   background-color: rgb(253, 253, 126);
   text-align: center;
   cursor: pointer;
-}
-
-a {
-  text-decoration: none;
 }
