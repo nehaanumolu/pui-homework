@@ -1,15 +1,65 @@
+<!-- Product Gallery Page -->
+
 <!DOCTYPE html>
+
 <html lang="en">
+
   <meta charset="UTF-8">
-  <title>Page Title</title>
+  
+  <head>
+
+    <title>Product Detail Page</title>
+
+    <link rel="stylesheet" href="css/style.css"> <!-- import stylesheet -->
+
+  </head>
   
   <body>
 
-    <h1>Other Page</h1>
+    <!-- Page Header -->
+    <div class="page-header">
+      <a href="index.html">
+        <img class="bunbun-logo" src="assets/logo/logo-01.svg"> 
+      </a>
+    </div>
 
-    <p>
-        Hello!
-    </p>
+    <!-- Top Menu i.e. Products vs. Cart-->
+    <div class="top-menu">
+      <a href="index.html">
+        <p class="products-title-regular ">PRODUCTS</p>
+      </a>
+      <a href="shopping_cart_page.html">
+        <p class="cart-title-highlighted">CART</p>
+      </a>
+    </div>
+    
+    <p class="page-description">Shopping Cart</p>
+
+    <!-- Product cart details -->
+    <div class="product-cart-section">
+
+      <div class="product-cart-card">
+        <img class="product-cart-image" src="assets/products/original-cinnamon-roll.jpg">
+        <p class="remove-button">Remove</p>
+        <p class="product-cart-details ">Original Cinnamon Roll</p>
+        <p class="product-cart-details ">Glazing: Keep original</p>
+        <p class="product-cart-details ">Pack Size: 1</p>
+        <p class="product-cart-details ">$2.49</p>
+      </div>
+
+      <div class="product-cart-card">
+        <img class="product-cart-image" src="assets/products/double-chocolate-cinnamon-roll.jpg">
+        <p class="remove-button">Remove</p>
+        <p class="product-cart-details ">Double Chocolate Cinnamon Roll</p>
+        <p class="product-cart-details ">Glazing: Sugar milk</p>
+        <p class="product-cart-details ">Pack Size: 6</p>
+        <p class="product-cart-details ">$27.45</p>
+      </div>
+  </div>
+
+  <p class="product-cart-details">Total: $29.94</p>
+  <button class="product-cart-checkout-button">Checkout</button>
 
   </body>
+
 </html>
