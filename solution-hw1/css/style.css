@@ -6,7 +6,7 @@ https://blog.logrocket.com/creating-custom-select-dropdown-css/
 */
 
 .page-header {
-  border-bottom: 2px solid black;
+  border-bottom: 4px solid black;
 }
 
 .bunbun-logo {
@@ -88,6 +88,9 @@ https://blog.logrocket.com/creating-custom-select-dropdown-css/
   margin: 15px;
 }
 
+.product-card:hover .product-gallery-product-name {
+  font-weight: bold;
+}
 .product-gallery-product-name {
   font-size: 22px;
   color: black;
@@ -160,10 +163,10 @@ https://blog.logrocket.com/creating-custom-select-dropdown-css/
 }
 
 .product-cart-section {
-  border-bottom: 5px solid black;
   padding: 20px;
   margin: 20px;
   align-items: center;
+  border-bottom: 5px solid black;
 }
 
 .product-cart-card {
@@ -210,4 +213,8 @@ https://blog.logrocket.com/creating-custom-select-dropdown-css/
   background-color: rgb(253, 253, 126);
   text-align: center;
   cursor: pointer;
+}
+
+a {
+  text-decoration: none;
 }
