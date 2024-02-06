@@ -1,49 +1,34 @@
 
 /* Entire scrollable product gallery section */ 
-.product-gallery-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: scroll;
+.gallery-wrapper {
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 80px;
+  display: grid;
 }
 
 /* Contains product image, name and price */
-.product-card{
-  padding: 5px;
-  margin: 5px;
+.gallery-item {
+  display: block;
+  margin: auto;
+  margin-bottom: 20px;
 }
 
-/* Product card gets highlighted when user hovers over it */
-.product-card:hover{
-  background-color: rgb(245, 245, 110);
+.gallery-item:hover {
+	background-color: yellow;
+}
+.gallery-item img {
+  width: 400px;
+}
+
+.gallery-item .name {
+  text-decoration: underline;
 }
 
 .product-image {
-  width: 400px;
-  height: 400px;
-  border: 3px solid black;
-  align-items: center;
+	border:  3px solid black;
 }
 
-.product-gallery-product-name, .product-gallery-price {
-  margin: 15px;
-}
-
-/* Bold product name when hovering over product card */ 
-.product-card:hover .product-gallery-product-name {
-  font-weight: bold;
-}
-
-.product-gallery-product-name {
-  font-size: 22px;
-  color: black;
-  text-decoration: underline;
-  text-align: left;
-}
-
-.product-gallery-price {
-  font-size: 22px;
-  color: black;
-  text-align: left;
+p.name:hover {
+	font-weight: bold;
 }
