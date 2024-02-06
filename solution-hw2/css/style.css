@@ -1,242 +1,38 @@
-/* CSS Stylesheet for Homework 1 */
 
-/* Sources Used: 
-https://www.w3.org/Style/Examples/007/center.en.html
-https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors
-https://blog.logrocket.com/creating-custom-select-dropdown-css/
-*/
-
-
-/* ----- General Rules applicable to every page ------ */
-
-.page-header {
-  border-bottom: 4px solid black;
+body {
+	font-family: Helvetica, sans-serif;
 }
 
-.bunbun-logo {
-  width: 400px;
-}
-
-.top-menu {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-}
-
-/* --- Disable underline feature of any navigation links ---- */ 
 a {
   text-decoration: none;
+  color: black;
 }
 
-/* Words Products and Cart in Top Menu Bar, Highlighted & Regular based on page*/
-
-.products-title-highlighted, .cart-title-regular {
-  margin: 5px;
-}
-
-.products-title-highlighted {
-  font-size: 28px;
-  font-weight: bold;
+.highlight {
   background-color: yellow;
-  color: black;
-}
-
-.cart-title-regular {
-  font-size: 28px;
-  color: black;
-}
-
-.products-title-regular {
-  font-size: 28px;
-  color: black;
-}
-
-.products-title-regular, .cart-title-highlighted {
-  margin: 5px;
-}
-
-.cart-title-highlighted {
-  font-size: 28px;
   font-weight: bold;
-  background-color: yellow;
-  color: black;
 }
 
-/* Page description at top of each page */ 
-
-.page-description {
-  font-size: 30px;
-  color: black;
-  text-align: center;
-  padding: 20px;
+div#banner {
+	padding-top:  50px;
+	font-size:  25px;
+	text-align: center;
 }
 
-/* -------- Product Gallery Rules -------- */
-
-/* Entire scrollable product gallery section */ 
-.product-gallery-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: scroll;
-}
-
-/* Contains product image, name and price */
-.product-card{
-  padding: 5px;
-  margin: 5px;
-}
-
-/* Product card gets highlighted when user hovers over it */
-.product-card:hover{
-  background-color: rgb(245, 245, 110);
-}
-
-.product-image {
+.nav-wrapper img {
   width: 400px;
-  height: 400px;
-  border: 3px solid black;
-  align-items: center;
 }
 
-.product-gallery-product-name, .product-gallery-price {
-  margin: 15px;
+.navbar {
+  border-bottom: 3px solid black;
 }
 
-/* Bold product name when hovering over product card */ 
-.product-card:hover .product-gallery-product-name {
-  font-weight: bold;
-}
-
-.product-gallery-product-name {
-  font-size: 22px;
-  color: black;
-  text-decoration: underline;
-  text-align: left;
-}
-
-.product-gallery-price {
-  font-size: 22px;
-  color: black;
-  text-align: left;
-}
-
-/* ------- Product Detail Page Rules ------- */ 
-
-.product-detail-card {
-  margin: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.product-detail-description {
-  font-size: 23px;
-  color: black;
-  text-align: center;
-}
-
-.product-detail-card label {
-  font-size: 25px;
-  color: black;
-  text-align: center;
-  margin: 15px;
-}
-
-/* Drop down menu styling */ 
-.product-detail-card select {
-  font-size: 15px;
-  color: black;
-  text-align: center;
-  background-color: white;
-  padding: 5px;
-  border-radius: 0px;
-  width: 150px;
-}
-
-.product-add-to-cart-card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 30px;
-}
-
-.product-detail-price, .add-to-cart-button  {
-  display: inline-block;
-  font-size: 17px;
-  color: black;
-  font-weight: bold;
-  vertical-align: middle;
-  margin: 5px;
-}
-
-.add-to-cart-button {
-  width: auto;
-  border: 2px solid black;
-  padding: 7px;
-  height: auto;
-  font-size: 10px;
-  background-color: yellow;
-  text-align: center;
-  cursor: pointer;
-}
-
-
-/* ------ Product Cart Page Rules ----- */
-
-.product-cart-section {
-  padding: 20px;
-  margin: 20px;
-  align-items: center;
-  border-bottom: 5px solid black;
-}
-
-.product-cart-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: scroll;
-  margin: 5px;
-}
-
-.product-cart-image {
-  width: 200px;
-  height: 200px;
-  border: 2px solid black;
-}
-
-.remove-button {
-  font-weight: bold;
-  font-size: 20px;
-  color: black;
-  text-decoration: underline;
-  text-align: center;
-}
-
-.product-cart-details {
-  margin: 7px;
-  font-size: 19px;
-  color: black;
-  text-align: center;
-}
-
-.product-cart-checkout-button {
-  display: flex;
-  justify-content: center;
-  width: auto;
-  box-shadow: 40px;
-  font-weight: bold;
-  border: 2px solid black;
-  padding: 15px;
-  margin: 30px auto;
-  height: auto;
-  font-size: 20px;
-  background-color: rgb(253, 253, 126);
-  text-align: center;
-  cursor: pointer;
+.navbar a {
+	font-size:  25px;
+	width:  100%;
+	text-align: right;
+	text-transform: uppercase;
+  display: block;
+	text-align: center;
+	margin:  10px;
 }

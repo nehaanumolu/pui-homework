@@ -10,33 +10,24 @@
 
     <title>Product Detail Page</title>
 
-    <link rel="stylesheet" href="css/style.css"> <!-- import stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="css/detail.css">
+    <link rel="stylesheet" href="css/cart.css">
 
   </head>
   
   <body>
 
-    <!-- Page Header -->
-    <div class="page-header">
-      <!-- Clicking on logo links to product gallery page -->
-      <a href="index.html">
-        <img class="bunbun-logo" alt="Bun Bub Logo" src="assets/logo/logo-01.svg"> 
-      </a>
+    <div class="nav-wrapper">
+      <a href="index.html" id="logo"><img src="assets/logo/logo-01.svg"></a>       
+      <div class="navbar">
+        <a id="product" href="index.html"><span>Products</span></a>
+        <a id="cart" href="cart.html"><span class="highlight">Cart</span></a>
+      </div>
+      <div id="banner">Our hand-made cinnamon roll</div>
     </div>
 
-    <!-- Top Menu i.e. Products vs. Cart-->
-    <div class="top-menu">
-      <a href="index.html">
-        <p class="products-title-regular">PRODUCTS</p>
-      </a>
-      <a href="shopping_cart_page.html">
-        <p class="cart-title-highlighted">CART</p>
-      </a>
-    </div>
-    
-    <p class="page-description">Shopping Cart</p>
-
-    <!-- Product cart details -->
     <div class="product-cart-section">
 
       <!-- Each Product placed in Product cart card that contains image, remove button, and details-->
