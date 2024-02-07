@@ -3,18 +3,12 @@
 <!DOCTYPE html>
 
 <html lang="en">
-
-  <meta charset="UTF-8">
   
   <head>
-
-    <title>Product Detail Page</title>
-
+    <meta charset="UTF-8">
+    <title>Product Cart Page</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/gallery.css">
-    <link rel="stylesheet" href="css/detail.css">
     <link rel="stylesheet" href="css/cart.css">
-
   </head>
   
   <body>
@@ -28,29 +22,32 @@
       <div id="banner">Our hand-made cinnamon roll</div>
     </div>
 
-    <div class="product-wrapper container">
+    <div class="product-cart-wrapper container">
+      <div id="item-listing">
+        <div>
+          <img class="product-image" alt="Original Cinnamon Roll" src="assets/products/original-cinnamon-roll.jpg">
+          <p class="remove">Remove</p>
+        </div>
       <div>
-        <img class="product-image" alt="Original Cinnamon Roll" src="assets/products/original-cinnamon-roll.jpg">
-      </div>div
-        <p class="remove-button">Remove</p>
-        <p class="product-cart-details ">Original Cinnamon Roll</p>
-        <p class="product-cart-details ">Glazing: Keep original</p>
-        <p class="product-cart-details ">Pack Size: 1</p>
-        <p class="product-cart-details ">$2.49</p>
+        <p>Original Cinnamon Roll</p>
+        <p>Glazing: Keep original</p>
+        <p>Pack Size: 1</p>
+        <p>$2.49</p>
       </div>
 
-      <div class="product-cart-card">
-        <img class="product-cart-image" alt="Double Chocolate Cinnamon Roll" src="assets/products/double-chocolate-cinnamon-roll.jpg">
-        <p class="remove-button">Remove</p>
-        <p class="product-cart-details ">Double Chocolate Cinnamon Roll</p>
-        <p class="product-cart-details ">Glazing: Sugar milk</p>
-        <p class="product-cart-details ">Pack Size: 6</p>
-        <p class="product-cart-details ">$27.45</p>
+      <div>
+        <img class="product-image" alt="Double Chocolate Cinnamon Roll" src="assets/products/double-chocolate-cinnamon-roll.jpg">
+        <p class="remove">Remove</p>
+      </div>
+      <div>
+        <p>Double Chocolate Cinnamon Roll</p>
+        <p>Glazing: Sugar milk</p>
+        <p>Pack Size: 6</p>
+        <p>$27.45</p>
       </div>
 
   </div>
   
-  <!-- Product Price and Checkout button-->
   <p class="product-cart-details">Total: $29.94</p>
   <button class="product-cart-checkout-button">Checkout</button>
 
