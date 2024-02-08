@@ -23,20 +23,38 @@ div#banner {
 	text-align: center;
 }
 
+.navbar-flexbox {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	position: relative;
+}
+
+.navbar-flexbox::after {
+	content: '';
+	position: absolute;
+	left: 420px;
+	top: 50%;
+	width: calc(100% - 400px);
+	height: 7px;
+	background-color: black;
+}
+
 .nav-wrapper img {
   width: 400px;
 }
 
-.navbar {
-  border-top: 3px solid black;
+.links-container {
+	font-size: 30px;
+	color: black;
+	padding-left: calc(100% - 400px);
+	padding-top: 50px;
+	padding-bottom: 50px;
+	display: flex;
+	position: absolute;
+	flex-direction: row;
 }
 
-.navbar a {
-	font-size:  25px;
-	width:  100%;
-	text-align: right;
-	text-transform: uppercase;
-  display: block;
-	text-align: center;
-	margin:  10px;
+.links-container a {
+	margin-right: 15%;
 }
