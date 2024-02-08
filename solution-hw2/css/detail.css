@@ -3,12 +3,13 @@
   text-align: center;
   display: flex;
   justify-content: center;
+  margin: 75px;
   }
 
 
 select {
   padding: 10px;
-  width: 300px;
+  width: 250px;
 }
 
 #add-cart {
@@ -20,7 +21,7 @@ select {
 	padding: 10px;
 	text-align: center;
 	cursor: pointer;
-  width: 150px;
+  width: 250px;
 	padding: 10px;
 }
 
@@ -43,6 +44,24 @@ select {
 
 .image-container, .info-container {
   flex: 1;
-  padding: 10px;
+  padding: 15px;
   text-align: left;
+  max-width: 600px;
+}
+
+#message {
+  width: 60%;
+}
+
+#message, #customize, #add-cart {
+  flex-grow: 1;
+  margin-bottom: 120px;
+}
+
+#add-cart {
+  padding: 20px;
+}
+
+#message p {
+  font-size: 25px;
 }
