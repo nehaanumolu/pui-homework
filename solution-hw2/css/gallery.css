@@ -1,14 +1,19 @@
 
-/* Entire scrollable product gallery section */ 
 .gallery-wrapper {
   padding-left: 10%;
   padding-right: 10%;
   padding-top: 80px;
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
 /* Contains product image, name and price */
 .gallery-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   display: block;
   margin: auto;
   margin-bottom: 20px;
@@ -18,7 +23,8 @@
 	background-color: yellow;
 }
 .gallery-item img {
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
 }
 
 .gallery-item .name {
