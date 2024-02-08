@@ -23,16 +23,13 @@
 	background-color: yellow;
 }
 .gallery-item img {
-  width: 100%;
-  max-width: 400px;
+  width: 285px;
+  height: 285px;
+  border:  3px solid black;
 }
 
 .gallery-item .name {
   text-decoration: underline;
-}
-
-.product-image {
-	border:  3px solid black;
 }
 
 p.name:hover {
