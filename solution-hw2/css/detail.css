@@ -38,13 +38,14 @@ select {
 .detail-flex-box {
   display: flex;
   flex-direction: row;
-  width: 80%;
   align-items: stretch;
+  width: 100%;
+  transform: translatex(150px);
 }
 
 .image-container, .info-container {
   flex: 1;
-  padding: 15px;
+  padding: 20px;
   text-align: left;
   max-width: 600px;
 }
