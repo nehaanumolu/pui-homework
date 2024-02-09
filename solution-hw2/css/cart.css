@@ -67,3 +67,10 @@ p.remove {
   transform: translateX(250px);
   font-size: 25px;
 }
+
+.checkout-button {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  height: 70px;
+}
