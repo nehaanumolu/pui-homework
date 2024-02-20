@@ -82,3 +82,4 @@ let packSelectElement = document.querySelector("#pack-size");
 // change
 glazeSelectElement.addEventListener('change', onSelectGlazeChange);
 packSelectElement.addEventListener('change', onSelectPackSizeChange);
+

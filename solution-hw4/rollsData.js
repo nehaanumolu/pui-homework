@@ -24,3 +24,15 @@ const rolls = {
         "imageFile": "strawberry-cinnamon-roll.jpg"
     }    
 };
+
+
+cart = []
+const queryString = window.location.search;
+const params = new URLSearchParams(queryString);
+const rollType = params.get('roll');
+const name = rollType;
+const price = rolls[rollType].basePrice;
+const imagePath = rolls[rollType].imageFile;
+
+const header = document.querySelector("#banner");
+headerElement.header = rollType + ' Cinnamon Rolls!';
