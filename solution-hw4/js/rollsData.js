@@ -45,6 +45,15 @@ price.innerText = "$" + base_price.toFixed(2);
 
 let cart = []
 
+class Roll {
+    constructor(rollType, rollGlazing, packSize, basePrice) {
+        this.type = rollType;
+        this.glazing =  rollGlazing;
+        this.size = packSize;
+        this.basePrice = basePrice;
+    }
+}
+
 function addToCart() {
     const glazingSelect = document.querySelector("#glazing");
     const glazing = glazePrices[glazingSelect.selectedIndex].glaze;
@@ -56,15 +65,6 @@ function addToCart() {
     cart.push(newRoll);
 
     console.log(cart);
-}
-
-class Roll {
-    constructor(rollType, rollGlazing, packSize, basePrice) {
-        this.type = rollType;
-        this.glazing =  rollGlazing;
-        this.size = packSize;
-        this.basePrice = basePrice;
-    }
 }
 
 const addToCartBtn = document.querySelector("#add-to-cart-btn");
