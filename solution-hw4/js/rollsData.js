@@ -36,7 +36,7 @@ const rollName = rollType;
 const header = document.querySelector("#banner");
 header.innerText = rollName + ' Cinnamon Roll';
 
-const image = imagePath;
+const image = document.querySelector(".product-image");
 image.src = "assets/products/" + imagePath;
 
 const price = document.querySelector('.cart-price');
