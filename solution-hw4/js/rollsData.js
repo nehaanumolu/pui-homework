@@ -27,12 +27,20 @@ const rolls = {
 
 
 cart = []
+
 const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
 const rollType = params.get('roll');
-const name = rollType;
-const price = rolls[rollType].basePrice;
-const imagePath = rolls[rollType].imageFile;
 
-const header = document.querySelector("#banner");
-headerElement.header = rollType + ' Cinnamon Rolls!';
+if (rollType && rolls[rollType]) {
+    const price = rolls[rollType].basePrice;
+    const imagePath = rolls[rollType].imageFile;
+    const name = rollType;
+
+    const header = document.querySelector("#banner");
+    header.innerText = rollType + ' Cinnamon Roll';
+
+    const image = document.querySelector('.product-image');
+    image.src = "assets/products/" + name.toLowerCase() + "-cinnamon-roll.jpg";
+}
+
