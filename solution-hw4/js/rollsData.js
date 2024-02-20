@@ -25,25 +25,47 @@ const rolls = {
     }    
 };
 
+const queryString = window.location.search;
+const params = new URLSearchParams(queryString);
+const rollType = params.get('roll')
+
+const base_price = rolls[rollType].basePrice;
+const imagePath = rolls[rollType].imageFile;
+const rollName = rollType;
+
+const header = document.querySelector("#banner");
+header.innerText = rollName + ' Cinnamon Roll';
+
+const image = imagePath;
+image.src = "assets/products/" + imagePath;
+
+const price = document.querySelector('.cart-price');
+price.innerText = "$" + base_price.toFixed(2);
+
 
 let cart = []
 
-const queryString = window.location.search;
-const params = new URLSearchParams(queryString);
-const rollType = params.get('roll');
+function addToCart() {
+    const glazingSelect = document.querySelector("#glazing");
+    const glazing = glazePrices[glazingSelect.selectedIndex].glaze;
 
-if (rollType && rolls[rollType]) {
-    const base_price = rolls[rollType].basePrice;
-    const imagePath = rolls[rollType].imageFile;
-    const rollName = rollType;
+    const packSizeSelect = document.querySelector("#pack-size");
+    const packSize = parseInt(packSizeSelect.options[packSizeSelect.selectedIndex].text);
 
-    const header = document.querySelector("#banner");
-    header.innerText = rollName + ' Cinnamon Roll';
+    const newRoll = new Roll(rollType, glazing, packSize, base_price);
+    cart.push(newRoll);
 
-    const image = imagePath;
-    image.src = "assets/products/" + imagePath;
-
-    const price = document.querySelector('.cart-price');
-    price.innerText = "$" + base_price.toFixed(2);
+    console.log(cart);
 }
 
+class Roll {
+    constructor(rollType, rollGlazing, packSize, basePrice) {
+        this.type = rollType;
+        this.glazing =  rollGlazing;
+        this.size = packSize;
+        this.basePrice = basePrice;
+    }
+}
+
+const addToCartBtn = document.querySelector("#add-to-cart-btn");
+addToCartBtn.addEventListener('click', addToCart);
