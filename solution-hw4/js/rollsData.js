@@ -26,21 +26,24 @@ const rolls = {
 };
 
 
-cart = []
+let cart = []
 
 const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
 const rollType = params.get('roll');
 
 if (rollType && rolls[rollType]) {
-    const price = rolls[rollType].basePrice;
+    const base_price = rolls[rollType].basePrice;
     const imagePath = rolls[rollType].imageFile;
-    const name = rollType;
+    const rollName = rollType;
 
     const header = document.querySelector("#banner");
-    header.innerText = rollType + ' Cinnamon Roll';
+    header.innerText = rollName + ' Cinnamon Roll';
 
-    const image = document.querySelector('.product-image');
-    image.src = "assets/products/" + name.toLowerCase() + "-cinnamon-roll.jpg";
+    const image = imagePath;
+    image.src = "assets/products/" + imagePath;
+
+    const price = document.querySelector('.cart-price');
+    price.innerText = "$" + base_price.toFixed(2);
 }
 

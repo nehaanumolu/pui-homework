@@ -47,10 +47,9 @@ let sizePrices = [
 let currentGlazePrice = 0.0;
 let currentPackPriceAdaptation = 1.0;
 
-
 function displayPrice() {
     let cartPrice = document.querySelector('.cart-price');
-    const basePrice = 2.49; // base price does not change
+    const basePrice = rolls[rollType].basePrice;
     // calculate total price
     let totalPrice = (currentGlazePrice + basePrice) * currentPackPriceAdaptation;
     // change cart price display
