@@ -1,46 +1,24 @@
-
-
 let cart = [] // initialize cart array
 
-// Roll class 
-class Roll {
-    constructor(rollType, rollGlazing, packSize, rollPrice) {
-        this.type = rollType;
-        this.glazing =  rollGlazing;
-        this.size = packSize;
-        this.basePrice = rollPrice;
-    }
-}
 
-// Compute a roll's total price from pack size, roll type and glazing
-function computeRollPrice(roll_type, glazing, pack_size) {
-    // get base price of roll type
-    let base_price = rolls[roll_type].basePrice;
-
-    // get price adaptation of given pack_size
-    let packSize = sizePrices.find(sizePack => sizePack.packSize == pack_size)
-    let price_adaptation = packSize.priceAdaptation;
-
-    // find glazing price for given glazing
-    let glazing_lowercase = glazing.toLowerCase().replace(/ /g, '-');
-    console.log(glazing_lowercase)
-    let glaze = glazePrices.find(glazePrice => glazePrice.glaze == glazing_lowercase);
-    let glazePrice = glaze.price;
-
-    // compute total price and return
-    let total_price = (base_price + glazePrice) * price_adaptation;
-    return total_price;
-}
 
 // Using Roll class, make four new Roll objects and add them to your cart
 
-let original_roll = new Roll("Original", "Sugar Milk", 1, computeRollPrice("Original", "Sugar Milk", 1))
-let walnut_roll = new Roll("Walnut", "Vanilla Milk", 12, computeRollPrice("Walnut", "Vanilla Milk", 12))
-let raisin_roll = new Roll("Raisin", "Sugar Milk", 3, computeRollPrice("Raisin", "Sugar Milk", 3))
-let apple_roll = new Roll("Apple", "Original", 3, computeRollPrice("Apple", "Original", 3))
+let original_roll = new Roll("Original", "Sugar Milk", 1, rolls["Original"].basePrice);
+let original_roll_itemprice = original_roll.computeRollPrice();
+console.log("original_roll item price: " + original_roll_itemprice);
+let walnut_roll = new Roll("Walnut", "Vanilla Milk", 12, rolls["Walnut"].basePrice);
+let walnut_roll_itemprice = walnut_roll.computeRollPrice();
+console.log("walnut_roll item price: " + walnut_roll_itemprice);
+let raisin_roll = new Roll("Raisin", "Sugar Milk", 3, rolls["Raisin"].basePrice);
+let raisin_roll_itemprice = raisin_roll.computeRollPrice();
+console.log("raising_roll item price: " + raisin_roll_itemprice);
+let apple_roll = new Roll("Apple", "Original", 3, rolls["Apple"].basePrice);
+
 
 // add new roll instances to cart array
 cart.push(original_roll, walnut_roll, raisin_roll, apple_roll);
+console.log(cart);
 
 function updateCart(roll) {
     const cartWrapper = document.querySelector('.product-cart-wrapper');
@@ -82,7 +60,7 @@ function updateCart(roll) {
     const itemPriceDiv = document.createElement('div');
     itemPriceDiv.classList.add('item-price');
     const price = document.createElement('p');
-    price.textContent = "$ " + computePrice(roll.size, roll.type, roll.glazing).toFixed(2);
+    price.textContent = "$ " + roll.computeRollPrice();
     itemPriceDiv.appendChild(price);
 
     // append all to new Roll
