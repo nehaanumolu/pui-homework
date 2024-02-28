@@ -43,8 +43,9 @@ const price = document.querySelector('.cart-price');
 price.innerText = "$" + base_price.toFixed(2);
 
 
-let cart = []
+let cart = [] // create array of set to represent cart
 
+// roll class
 class Roll {
     constructor(rollType, rollGlazing, packSize, basePrice) {
         this.type = rollType;
@@ -53,6 +54,16 @@ class Roll {
         this.basePrice = basePrice;
     }
 }
+
+// create four new roll instances
+let original_roll = new Roll("Original", "Sugar Milk", 1, 2.49)
+let walnut_roll = new Roll("Walnut", "Vanilla Milk", 12, 39.90/12)
+let raisin_roll = new Roll("Raisin", "Sugar Milk", 3, 8.97/3)
+let apple_roll = new Roll("Apple", "Original", 3, 10.47/3)
+
+// add new roll instances to cart array
+cart.push(original_roll, walnut_roll, raisin_roll, apple_roll);
+
 
 function addToCart() {
     const glazingSelect = document.querySelector("#glazing");
@@ -69,3 +80,4 @@ function addToCart() {
 
 const addToCartBtn = document.querySelector("#add-to-cart-btn");
 addToCartBtn.addEventListener('click', addToCart);
+
