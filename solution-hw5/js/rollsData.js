@@ -25,9 +25,12 @@ const rolls = {
     }    
 };
 
+
+// Code for product detail page --> displaying product
+// based on url parameters
 const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
-const rollType = params.get('roll')
+const rollType = params.get('roll');
 
 const base_price = rolls[rollType].basePrice;
 const imagePath = rolls[rollType].imageFile;
@@ -43,22 +46,23 @@ const price = document.querySelector('.cart-price');
 price.innerText = "$" + base_price.toFixed(2);
 
 
-let cart = [] // create array of set to represent cart
+// Code for Cart page
+let cart = [] // initialize cart array
 
-// roll class
+// Roll class 
 class Roll {
-    constructor(rollType, rollGlazing, packSize, basePrice) {
+    constructor(rollType, rollGlazing, packSize, rollPrice) {
         this.type = rollType;
         this.glazing =  rollGlazing;
         this.size = packSize;
-        this.basePrice = basePrice;
+        this.basePrice = rollPrice;
     }
 }
 
 // wrote a function that would comptue price given pack_size, roll_type, glazing
 function computePrice(pack_size, roll_type, glazing) {
     // get base price of roll type
-    let basePrice = rolls[roll_type].basePrice;
+    let base_price = rolls[roll_type].basePrice;
 
     // get price adaptation of given pack_size
     let packSize = sizePrices.find(sizePack => sizePack.packSize == pack_size)
@@ -141,10 +145,10 @@ function updateCart(roll) {
     });
 }
 
-displayCart(original_roll);
-displayCart(walnut_roll);
-displayCart(raisin_roll);
-displayCart(apple_roll);
+updateCart(original_roll);
+updateCart(walnut_roll);
+updateCart(raisin_roll);
+updateCart(apple_roll);
 
 function addToCart() {
     const glazingSelect = document.querySelector("#glazing");
