@@ -55,15 +55,37 @@ class Roll {
     }
 }
 
+// wrote a function that would comptue price given pack_size, roll_type, glazing
+function computePrice(pack_size, roll_type, glazing) {
+    // get base price of roll type
+    let basePrice = rolls[roll_type].basePrice;
+
+    // get price adaptation of given pack_size
+    let packSize = sizePrices.find(sizePack => sizePack.packSize == pack_size)
+    let price_adaptation = packSize.priceAdaptation;
+
+    // find glazing price for given glazing
+    let glazing_lowercase = glazing.toLowerCase().replace(' ', '-');
+    let glaze = glazePrices.find(glazePrice => glazePrice.glaze == glazing_lowercase);
+    let glazePrice = glaze.price;
+
+    // compute total price and return
+    let total_price = (base_price + glazePrice) * price_adaptation;
+    return total_price;
+}
+
 // create four new roll instances
-let original_roll = new Roll("Original", "Sugar Milk", 1, 2.49)
-let walnut_roll = new Roll("Walnut", "Vanilla Milk", 12, 39.90/12)
-let raisin_roll = new Roll("Raisin", "Sugar Milk", 3, 8.97/3)
-let apple_roll = new Roll("Apple", "Original", 3, 10.47/3)
+let original_roll = new Roll("Original", "Sugar Milk", 1, computePrice(1, "Original", "Sugar Milk"))
+let walnut_roll = new Roll("Walnut", "Vanilla Milk", 12, computePrice(12, "Walnut", "Vanilla Milk"))
+let raisin_roll = new Roll("Raisin", "Sugar Milk", 3, computePrice(3, "Raisin", "Sugar Milk"))
+let apple_roll = new Roll("Apple", "Original", 3, computePrice(3, "Apple", "Original"))
 
 // add new roll instances to cart array
 cart.push(original_roll, walnut_roll, raisin_roll, apple_roll);
 
+function displayCart(Roll) {
+    
+}
 
 function addToCart() {
     const glazingSelect = document.querySelector("#glazing");
