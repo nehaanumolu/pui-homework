@@ -1,5 +1,7 @@
-// list of glazePrice objects represented by
-// glaze value and associated price adaptations
+// JavaScript file to store global constants
+// & dictionaries that all other JS Files can access
+
+// dictionary mapping glaze types of prices
 const glazePrices = [
     {
         glaze: 'keep-original',
@@ -19,8 +21,8 @@ const glazePrices = [
     },
 ];
 
-// list of sizePrice objects represented by
-// values & associated price adaptations
+// dictionary mapping pack sizes to their
+// corresponding price adaptations
 const sizePrices = [
     {
         packSize: 1,
@@ -41,6 +43,8 @@ const sizePrices = [
 
 ]
 
+// dictionary mapping rolls to their respective
+// base prices and image file names
 const rolls = {
     "Original": {
         "basePrice": 2.49,
@@ -71,6 +75,7 @@ const rolls = {
 
 // Roll class 
 class Roll {
+    // initializes Roll's attributes
     constructor(rollType, rollGlazing, packSize, rollPrice) {
         this.type = rollType;
         this.glazing =  rollGlazing;
@@ -78,7 +83,7 @@ class Roll {
         this.basePrice = rollPrice; // holds base price for one single role
     }
 
-        // Compute a roll's total price from pack size, roll type and glazing
+    // Compute a roll's total price from pack size, roll type and glazing
     computeRollPrice() {
         // get base price of roll type
         let base_price = this.basePrice;
