@@ -1,7 +1,5 @@
 let cart = [] // initialize cart array
 
-
-
 // Using Roll class, make four new Roll objects and add them to your cart
 
 let original_roll = new Roll("Original", "Sugar Milk", 1, rolls["Original"].basePrice);
@@ -16,6 +14,7 @@ cart.push(original_roll, walnut_roll, raisin_roll, apple_roll);
 function updateCart(roll) {
     const cartWrapper = document.querySelector('.product-cart-wrapper');
     const checkoutSection = document.querySelector('.checkout-section');
+    const checkoutPrice = document.querySelector('.checkout-price');
 
     // create a new roll listing
     const newRoll = document.createElement('div');
@@ -64,10 +63,17 @@ function updateCart(roll) {
 
     // append newRoll to cart
     cartWrapper.insertBefore(newRoll, checkoutSection);
-
+    const currCartPrice = parseFloat(checkoutPrice.textContent.replace("$", ""));
+    const currRollPrice = parseFloat(price.textContent.replace("$", ""));
+    const updatedPrice = "$ " + (currCartPrice + currRollPrice).toFixed(2);
+    checkoutPrice.textContent = updatedPrice;
 
     removeButton.addEventListener('click', function() {
         cartWrapper.removeChild(newRoll);
+        const currCartPrice = parseFloat(checkoutPrice.textContent.replace("$", ""));
+        const currRollPrice = parseFloat(price.textContent.replace("$", ""));
+        const updatedPrice = "$ " + (currCartPrice - currRollPrice).toFixed(2);
+        checkoutPrice.textContent = updatedPrice;
     });
 }
 
