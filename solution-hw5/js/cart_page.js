@@ -15,6 +15,7 @@ cart.push(original_roll, walnut_roll, raisin_roll, apple_roll);
 
 function updateCart(roll) {
     const cartWrapper = document.querySelector('.product-cart-wrapper');
+    const checkoutSection = document.querySelector('.checkout-section');
 
     // create a new roll listing
     const newRoll = document.createElement('div');
@@ -62,7 +63,8 @@ function updateCart(roll) {
     newRoll.appendChild(itemPriceDiv);
 
     // append newRoll to cart
-    cartWrapper.appendChild(newRoll);
+    cartWrapper.insertBefore(newRoll, checkoutSection);
+
 
     removeButton.addEventListener('click', function() {
         cartWrapper.removeChild(newRoll);
