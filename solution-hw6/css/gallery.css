@@ -1,0 +1,38 @@
+
+.gallery-wrapper {
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 80px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* Contains product image, name and price */
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  display: block;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.gallery-item:hover {
+	background-color: yellow;
+}
+.gallery-item img {
+  width: 285px;
+  height: 285px;
+  border:  3px solid black;
+}
+
+.gallery-item .name {
+  text-decoration: underline;
+}
+
+p.name:hover {
+	font-weight: bold;
+}
+
