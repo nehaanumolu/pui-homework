@@ -99,6 +99,10 @@ function retrieveFromStorage() {
 	}
 }
 
+function updateCartBadge() {
+	const cartBadge = document.querySelector("#cart-badge");
+	cartBadge.innerText = cart.length;
+}
 
 initializeCart();
 cartItems.forEach(addRollToPage);

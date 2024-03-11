@@ -93,6 +93,7 @@ function addToCart() {
 	const jsonCart = JSON.stringify(cart);
 	localStorage.setItem('cart', jsonCart);
 	console.log(localStorage.getItem('cart'));
+	updateCartBadge();
 }
 
 // When the page loads, attempt to retrieve the cart from the local storage
@@ -104,6 +105,11 @@ function retrieveFromStorage() {
 	} else {
 		cart = [];
 	}
+}
+
+function updateCartBadge() {
+	const cartBadge = document.querySelector("#cart-badge");
+	cartBadge.innerText = cart.length;
 }
 
 
