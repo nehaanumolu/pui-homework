@@ -55,14 +55,16 @@ function addRollToPage(roll) {
     let currentRollCounter = rollCounter;
     cartItemElement.querySelector(".remove").onclick = function() {
         cartContainer.querySelector(`#roll-${currentRollCounter}`).remove();
-        // remove item from cart array
+
         cartItems.splice(cartItems.indexOf(roll), 1);
-        // convert updated cart to JSON
         const jsonCart = JSON.stringify(cartItems);
-        // save it in local storage
         localStorage.setItem('cartItems', jsonCart);
-        // print cart in local storage after saving
         console.log(localStorage.getItem('cartItems'));
+
+        const cartLength = cartItems.length;
+        const jsonCartLength = JSON.stringify(cartLength.toString());
+        localStorage.setItem('cart length', jsonCartLength);
+
         updateCartBadge();
         updateTotalPrice();
     }
@@ -85,21 +87,21 @@ function retrieveFromStorage() {
 	if (cartJSON != null) {
 		const storedCartItems = JSON.parse(cartJSON);
         storedCartItems.forEach(item => {
-            cartItems.push(new Roll(item.type, item.glazing, item.size, item.basePrice));
+            const current_roll = new Roll(item.type, item.glazing, item.size, item.basePrice);
+            cartItems.push(current_roll);
+            addRollToPage(current_roll)
         })
 
 	} else {
 		cartItems = [];
 	}
-    const cartLength = JSON.parse(localStorage.getItem('cart length'));
-    const cartBadge = document.querySelector("#cart-badge");
-	cartBadge.innerText = cartLength;
+
 }
 
 function updateCartBadge() {
-    const cartLength = cartItems.length;
-    const jsonCartLength = JSON.stringify(cartLength);
-    localStorage.setItem('cart length', jsonCartLength);
+    const cartLength = JSON.parse(localStorage.getItem('cart length'));
+    const cartBadge = document.querySelector("#cart-badge");
+	cartBadge.innerText = cartLength;
 }
 
 document.addEventListener('DOMContentLoaded', retrieveFromStorage);

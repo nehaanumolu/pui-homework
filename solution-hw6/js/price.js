@@ -93,7 +93,12 @@ function addToCart() {
 	const jsonCart = JSON.stringify(cart);
 	localStorage.setItem('cart', jsonCart);
 	console.log(localStorage.getItem('cart'));
-	updateCartBadge();
+
+	// update cart badge
+	const cartLength = cart.length;
+    const jsonCartLength = JSON.stringify(cartLength.toString());
+    localStorage.setItem('cart length', jsonCartLength);
+	updateBadge();
 }
 
 // When the page loads, attempt to retrieve the cart from the local storage
@@ -105,15 +110,13 @@ function retrieveFromStorage() {
 	} else {
 		cart = [];
 	}
+	updateBadge();
+}
+
+function updateBadge() {
 	const cartLength = JSON.parse(localStorage.getItem('cart length'));
     const cartBadge = document.querySelector("#cart-badge");
 	cartBadge.innerText = cartLength;
-}
-
-function updateCartBadge() {
-    const cartLength = cart.length;
-    const jsonCartLength = JSON.stringify(cartLength);
-    localStorage.setItem('cart length', jsonCartLength);
 }
 
 // add event listener that adds item to cart
