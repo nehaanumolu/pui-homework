@@ -1,86 +1,84 @@
-
 body {
-	font-family: Helvetica, sans-serif;
-}
-
-p {
-	font-size: 20px;
+	font-family: Verdana, sans-serif;
 }
 
 a {
-  text-decoration: none;
-  color: black;
+	text-decoration: none;
+	color:  black;
+}
+
+p, select, button {
+	font-size:  20px;
 }
 
 .highlight {
-  background-color: yellow;
-  font-weight: bold;
+	background-color: yellow;
+	font-weight: bold;
+}
+
+.container {
+	padding-left:  10%;
+	padding-right:  10%;
+	padding-top:  80px;
+	display: flex;
+}
+
+.navbar a {
+	font-size:  25px;
+	width:  100%;
+	text-align: right;
+	text-transform: uppercase;
 }
 
 div#banner {
-	padding-top:  50px;
-	font-size:  30px;
-	text-align: center;
+	padding-top:  30px;
+	font-size:  25px;
 }
 
-.navbar-flexbox {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
-	position: relative;
-	padding-bottom: 20px;
-	
+.product-image {
+	border:  3px solid black;
 }
 
-.navbar-flexbox::after {
-	content: '';
-	position: absolute;
-	left: 420px;
-	top: 50%;
-	width: calc(100% - 400px);
-	height: 7px;
-	background-color: black;
+.nav-wrapper {
+	display:  flex;
+	text-align: right;
 }
 
 .nav-wrapper img {
-  width: 400px;
+	flex:  0 0 auto;
+	width: 350px;
+	margin-right: 20px;
 }
 
-.links-container {
-	font-size: 30px;
-	color: black;
-	padding-left: calc(100% - 400px);
-	padding-top: 50px;
-	padding-bottom: 50px;
+.navbar {
 	display: flex;
-	position: absolute;
-	flex-direction: row;
+	flex-direction: column;
+	width:  100%;
 }
 
-#banner {
-	order: 3;
-	position: absolute;
-	transform: translate(450px, 150px);
+.navbar a {
+	margin: 30px;
 }
 
-.links-container a {
-	margin-right: 25%;
+.nav-row {
+	padding: 30px;
+	border-bottom:  5px solid black;
 }
 
-#cart {
-	position: relative;
-  }
-  
-#cart::after {
-content: '2';
-position: absolute;
-background-color: red;
-color: white;
-width: 16px;
-height: 30px;
-border-radius: 50%;
-font-size: 20px;
-padding: 5px;
-text-align: center;
-transform: translate(10px, -10px);
+div#banner {
+	text-align: left;
+	margin-top: 30px;
+}
+
+.nav-cart {
+	display: inline-block;
+}
+
+#cart-badge {
+	background-color: red;
+	color: white;
+	border-radius: 50%;
+	padding: 5px;
+	vertical-align: super;
+	font-size: smaller;
 }

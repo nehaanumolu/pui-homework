@@ -3,37 +3,41 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Shopping Cart</title>
+	<title>Product Gallery</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css" />
 	<link rel="stylesheet" href="css/cart.css" type="text/css" />
-    <script defer src="js/app.js"></script>
-    <script defer src="js/globals.js"></script>
-    <script defer src="js/detail_page.js"></script>
-    <script defer src="js/cart_page.js"></script>
 </head>
 <body>
 	<div class="nav-wrapper">
-		<div class="navbar-flexbox">
-		<a href="index.html" id="logo"><img src="assets/logo/logo-01.svg"></a>     
-		<div class="links-container">
-			<a id="product" href="index.html">PRODUCTS</a>
-			<a id="cart" href="#"><span class="highlight">CART</span></a>
-		</div>
-		<div id="banner">Our hand-made cinnamon rolls</div>
+		<a href="index.html"><img alt="bun bun bake shop logo" src="images/logo/logo-01.svg"></a>
+		<div class="navbar">
+			<div class="nav-row">
+				<a href="index.html">Products</a>
+				<div class="nav-cart">
+					<a href="#">
+						<span class="highlight">Cart</span>
+						<span id="cart-badge">2</span>
+					</a>
+				</div>
+			</div>
+			<div id="banner">Shopping Cart</div>
 		</div>
 	</div>
 
-	<div class="product-cart-wrapper">
-		<div class="checkout-section">
-			<div class="total-price">
-				<p class="total-word">Total</p>
-				<p class="checkout-price">$0.00</p>
+	<div class="container">
+		<div class="cart-wrapper"></div>
+		<div class="checkout-info">
+			<div class="whitespace"></div>
+			<div class="item-detail">
+				<p>Total</p>
 			</div>
-			<div class="checkout-button">
+			<div>
+				<p class="total-price">$ 29.94</p>
 				<button class="highlight">Checkout</button>
 			</div>
 		</div>
-</div>
-	
+	</div>
+	<script type="text/javascript" src="js/rollsData.js"></script>
+	<script type="text/javascript" src="js/cart.js"></script>
 </body>
 </html>
