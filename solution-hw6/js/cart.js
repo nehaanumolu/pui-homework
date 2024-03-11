@@ -62,7 +62,14 @@ function addRollToPage(roll) {
     let currentRollCounter = rollCounter;
     cartItemElement.querySelector(".remove").onclick = function() {
         cartContainer.querySelector(`#roll-${currentRollCounter}`).remove();
+        // remove item from cart array
         cartItems.splice(cartItems.indexOf(roll), 1);
+        // convert updated cart to JSON
+        const jsonCart = JSON.stringify(cartItems);
+        // save it in local storage
+        localStorage.setItem('cartItems', jsonCart);
+        // print cart in local storage after saving
+        console.log(localStorage.getItem('cartItems'));
         updateTotalPrice();
     }
 
@@ -78,6 +85,23 @@ function updateTotalPrice() {
     totalPriceElement.innerText = "$ " + totalPrice.toFixed(2);
 }
 
+// attempt to retrieve cart from local storage
+function retrieveFromStorage() {
+	const cartJSON = localStorage.getItem('cartItems');
+	if (cartJSON != null) {
+		const storedCartItems = JSON.parse(cartJSON);
+        storedCartItems.forEach(item => {
+            cartItems.push(new Roll(item.type, item.glazing, item.size, item.basePrice));
+        })
+
+	} else {
+		cart = [];
+	}
+}
+
+
 initializeCart();
 cartItems.forEach(addRollToPage);
 updateTotalPrice();
+// add event listener when page is loaded
+document.addEventListener('DOMContentLoaded', retrieveFromStorage);
