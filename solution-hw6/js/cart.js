@@ -70,6 +70,7 @@ function addRollToPage(roll) {
         localStorage.setItem('cartItems', jsonCart);
         // print cart in local storage after saving
         console.log(localStorage.getItem('cartItems'));
+        updateCartBadge();
         updateTotalPrice();
     }
 
@@ -101,7 +102,7 @@ function retrieveFromStorage() {
 
 function updateCartBadge() {
 	const cartBadge = document.querySelector("#cart-badge");
-	cartBadge.innerText = cart.length;
+	cartBadge.innerText = cartItems.length;
 }
 
 initializeCart();
