@@ -10,7 +10,7 @@ const packPrices = {
 };
 
 // the cart array
-const cartItems = [];
+let cartItems = [];
 // used to create unique ID for each role, based on the order in which it's added to cart
 let rollCounter = 0;
 
@@ -86,10 +86,11 @@ function retrieveFromStorage() {
 	const cartJSON = localStorage.getItem('cartItems');
 	if (cartJSON != null) {
 		const storedCartItems = JSON.parse(cartJSON);
+        console.log(storedCartItems);
         storedCartItems.forEach(item => {
             const current_roll = new Roll(item.type, item.glazing, item.size, item.basePrice);
             cartItems.push(current_roll);
-            addRollToPage(current_roll)
+            addRollToPage(current_roll);
         })
 
 	} else {
@@ -105,6 +106,5 @@ function updateCartBadge() {
 }
 
 document.addEventListener('DOMContentLoaded', retrieveFromStorage);
-cartItems.forEach(addRollToPage);
 updateCartBadge();
 updateTotalPrice();

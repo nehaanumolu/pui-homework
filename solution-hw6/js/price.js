@@ -91,8 +91,8 @@ function addToCart() {
 	const newRoll = new Roll(rollType, glazingOption, packOption, basePrice);
 	cart.push(newRoll);
 	const jsonCart = JSON.stringify(cart);
-	localStorage.setItem('cart', jsonCart);
-	console.log(localStorage.getItem('cart'));
+	localStorage.setItem('cartItems', jsonCart);
+	console.log(localStorage.getItem('cartItems'));
 
 	// update cart badge
 	const cartLength = cart.length;
@@ -104,7 +104,7 @@ function addToCart() {
 // When the page loads, attempt to retrieve the cart from the local storage
 // If no cart exists in the storage, create an empty cart array
 function retrieveFromStorage() {
-	const cartJSON = localStorage.getItem('cart');
+	const cartJSON = localStorage.getItem('cartItems');
 	if (cartJSON != null) {
 		cart = JSON.parse(cartJSON);
 	} else {
