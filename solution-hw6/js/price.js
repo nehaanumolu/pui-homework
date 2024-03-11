@@ -105,13 +105,16 @@ function retrieveFromStorage() {
 	} else {
 		cart = [];
 	}
+	const cartLength = JSON.parse(localStorage.getItem('cart length'));
+    const cartBadge = document.querySelector("#cart-badge");
+	cartBadge.innerText = cartLength;
 }
 
 function updateCartBadge() {
-	const cartBadge = document.querySelector("#cart-badge");
-	cartBadge.innerText = cart.length;
+    const cartLength = cart.length;
+    const jsonCartLength = JSON.stringify(cartLength);
+    localStorage.setItem('cart length', jsonCartLength);
 }
-
 
 // add event listener that adds item to cart
 document.querySelector("#add-cart").addEventListener("click", addToCart);

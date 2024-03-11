@@ -24,13 +24,6 @@ class Roll {
     }
 }
 
-// initialize the cart with 4 rolls
-function initializeCart() {
-    cartItems.push(new Roll("Original", "Sugar milk", 1, rolls["Original"]["basePrice"]));
-    cartItems.push(new Roll("Walnut", "Vanilla milk", 12, rolls["Walnut"]["basePrice"]));
-    cartItems.push(new Roll("Raisin", "Sugar milk", 3, rolls["Raisin"]["basePrice"]));
-    cartItems.push(new Roll("Apple", "Keep original", 3, rolls["Apple"]["basePrice"]));
-}
 
 // add a Roll instance to the DOM
 // also register a function to remove this roll when the "Remove" link is clicked
@@ -96,17 +89,20 @@ function retrieveFromStorage() {
         })
 
 	} else {
-		cart = [];
+		cartItems = [];
 	}
+    const cartLength = JSON.parse(localStorage.getItem('cart length'));
+    const cartBadge = document.querySelector("#cart-badge");
+	cartBadge.innerText = cartLength;
 }
 
 function updateCartBadge() {
-	const cartBadge = document.querySelector("#cart-badge");
-	cartBadge.innerText = cartItems.length;
+    const cartLength = cartItems.length;
+    const jsonCartLength = JSON.stringify(cartLength);
+    localStorage.setItem('cart length', jsonCartLength);
 }
 
-initializeCart();
-cartItems.forEach(addRollToPage);
-updateTotalPrice();
-// add event listener when page is loaded
 document.addEventListener('DOMContentLoaded', retrieveFromStorage);
+cartItems.forEach(addRollToPage);
+updateCartBadge();
+updateTotalPrice();
