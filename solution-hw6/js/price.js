@@ -87,7 +87,7 @@ function updateTotalPrice() {
 }
 
 function addToCart() {
-	//m create a Roll instance containing all of the current product information and add it to the cart array
+	// create a Roll instance containing all of the current product information and add it to the cart array
 	const newRoll = new Roll(rollType, glazingOption, packOption, basePrice);
 	cart.push(newRoll);
 	const jsonCart = JSON.stringify(cart);
