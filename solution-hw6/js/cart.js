@@ -96,7 +96,7 @@ function retrieveFromStorage() {
 	} else {
 		cartItems = [];
 	}
-
+    updateTotalPrice();
 }
 
 function updateCartBadge() {
